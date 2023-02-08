@@ -25,26 +25,41 @@ const searchButton = document.querySelector("button");
 
 searchButton.addEventListener("click", function () {
     // e.preventDefault()
-    
+
     let search = document.querySelector("input");
-    
-    console.log("test");
-    
+
+    // console.log("test");
+
     fetch(`https://images-api.nasa.gov/search?q=${search.value}`)
         .then(response => response.json())
         .then((data) => {
-    
-            console.log(data);
-    
+
+            console.log(data.collection.items);
+            const items = data.collection.items;
+
             // document.body.innerHTML = `<img src="${data.url}"><input type="text" placeholder="Type here"><button>Search</button>`
-    
-            for (let i = 0; i < data.length; i++) {
-                const element = data[i];
-                
-                document.body.innerHTML += `<img src="${element.href}">`
-    
-                console.log(element);
+
+            for (let i = 0; i < items.length; i++) {
+                if (Array.isArray(items[i].links)) {
+                    const image = items[i].links[0];
+
+                    document.body.innerHTML += `<img src="${image.href}">`
+
+                }
+            }
+
+
+
+
+            for (let i = 0; i < items.length; i++) {
+                if (Array.isArray(items[i].data)) {
+
+                    const info = items[i].data[0];
+
+                    document.body.innerHTML += `<p>${info.description}</p>`
+
+                }   
             }
         });
-    
+
 });
