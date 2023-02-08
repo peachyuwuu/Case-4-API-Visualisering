@@ -21,14 +21,15 @@
 
 
 
+
 const searchButton = document.querySelector("button");
 
 searchButton.addEventListener("click", function () {
+
     // e.preventDefault()
 
     let search = document.querySelector("input");
 
-    // console.log("test");
 
     fetch(`https://images-api.nasa.gov/search?q=${search.value}`)
         .then(response => response.json())
@@ -37,29 +38,31 @@ searchButton.addEventListener("click", function () {
             console.log(data.collection.items);
             const items = data.collection.items;
 
-            // document.body.innerHTML = `<img src="${data.url}"><input type="text" placeholder="Type here"><button>Search</button>`
 
             for (let i = 0; i < items.length; i++) {
                 if (Array.isArray(items[i].links)) {
+
                     const image = items[i].links[0];
 
-                    document.body.innerHTML += `<img src="${image.href}">`
+                    const info = items[i].data[0];
+
+                    document.body.innerHTML += `<img src="${image.href}"><h1>${info.title}</h1><p>${info.description}</p>`
 
                 }
             }
 
 
+            // for (let i = 0; i < items.length; i++) {
+            //     if (Array.isArray(items[i].data)) {
+
+            //         const info = items[i].data[0];
+
+            //         document.body.innerHTML += `<p>${info.description}</p>`
+
+            //     }   
+            // }
 
 
-            for (let i = 0; i < items.length; i++) {
-                if (Array.isArray(items[i].data)) {
-
-                    const info = items[i].data[0];
-
-                    document.body.innerHTML += `<p>${info.description}</p>`
-
-                }   
-            }
         });
 
 });

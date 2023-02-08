@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Hammersmith One", sans-serif;
+    width: 414px;
+    height: 896px;
+}
+
+#enter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #000;
+}
+
+#home {
+    text-decoration: none;
+    color: #000;
+
+}
+
+h1 {
+    font-size: 1.5rem;
+}
