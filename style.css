@@ -10,6 +10,8 @@ body {
     font-family: "Hammersmith One", sans-serif;
     width: 414px;
     height: 896px;
+    background-image: url(images/Frame\ 1space-iphone11.png);
+    color: #fff;
 }
 
 #enter {
@@ -18,12 +20,12 @@ body {
     align-items: center;
     text-decoration: none;
     font-size: 2rem;
-    color: #000;
+    color: #fff;
 }
 
-#home {
+.home a {
     text-decoration: none;
-    color: #000;
+    color: #fff;
 
 }
 

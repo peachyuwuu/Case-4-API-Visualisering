@@ -15,6 +15,8 @@
 // Hämta bild från API:et
 
 
+
+
 // Lägg till &count=10 i slutet för att få en array med 10 slumpmässiga objekt
 
 // fetch("https://api.nasa.gov/planetary/apod?api_key=GrZaNTnebyHg8Y2vY7CBaAtgYyJviVsdVKMNt5zX&count=10")
@@ -26,7 +28,6 @@ const searchButton = document.querySelector("button");
 
 searchButton.addEventListener("click", function () {
 
-    // e.preventDefault()
 
     let search = document.querySelector("input");
 
@@ -50,18 +51,6 @@ searchButton.addEventListener("click", function () {
 
                 }
             }
-
-
-            // for (let i = 0; i < items.length; i++) {
-            //     if (Array.isArray(items[i].data)) {
-
-            //         const info = items[i].data[0];
-
-            //         document.body.innerHTML += `<p>${info.description}</p>`
-
-            //     }   
-            // }
-
 
         });
 
