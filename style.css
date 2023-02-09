@@ -11,24 +11,73 @@ body {
     width: 414px;
     height: 896px;
     background-image: url(images/Frame\ 1space-iphone11.png);
+    /* background: linear-gradient(180deg, #354B82 0%, rgba(5, 13, 34, 0.96) 100%);
+    opacity: 0.2; */
     color: #fff;
 }
 
-#enter {
+header {
     display: flex;
     justify-content: center;
-    align-items: center;
+    width: 100%;
+    position: fixed;
+    text-shadow: 2px 2px #000;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+}
+
+header a {
     text-decoration: none;
-    font-size: 2rem;
     color: #fff;
+
 }
 
 .home a {
     text-decoration: none;
     color: #fff;
+}
 
+.enter a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+
+
+img {
+    max-width: 414px;
+    border-radius: 1rem;
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px #000;
+
+}
+
+p {
+    font-size: 0.7rem;
+    text-shadow: 2px 2px #000;
+}
+
+.welcomeBox {
+    justify-content: center;
+}
+
+footer {
+    background-color: rgb(18, 41, 83);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-shadow: 2px 2px #000;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
 }

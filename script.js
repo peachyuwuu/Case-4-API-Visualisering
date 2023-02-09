@@ -1,31 +1,13 @@
-// Använd fetch() för att testa API koden
-
-// fetch('https://api.nasa.gov/planetary/apod?api_key=GrZaNTnebyHg8Y2vY7CBaAtgYyJviVsdVKMNt5zX')
-//     .then((response) => response.json())
-//     .then((data) => console.log(data));
-
-
-
-// swapi
-// fetch('https://swapi.dev/api/people/1/?format=json')
-// .then((response) => response.json())
-// .then((data) => console.log(data));
-
-
-// Hämta bild från API:et
-
-
-
-
 // Lägg till &count=10 i slutet för att få en array med 10 slumpmässiga objekt
 
 // fetch("https://api.nasa.gov/planetary/apod?api_key=GrZaNTnebyHg8Y2vY7CBaAtgYyJviVsdVKMNt5zX&count=10")
 
 
 
-
+// Definierar searchButton och väljer ut den med querySelector
 const searchButton = document.querySelector("button");
 
+// Lägger till EventListener som kollar när man klickar på knappen och kör funktionen nedan
 searchButton.addEventListener("click", function () {
 
 
