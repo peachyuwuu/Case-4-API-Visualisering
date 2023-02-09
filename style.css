@@ -11,31 +11,38 @@ body {
     width: 414px;
     height: 896px;
     background-image: url(images/Frame\ 1space-iphone11.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     /* background: linear-gradient(180deg, #354B82 0%, rgba(5, 13, 34, 0.96) 100%);
     opacity: 0.2; */
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
 
 header {
+    font-size: 2rem;
     display: flex;
     justify-content: center;
     width: 100%;
-    position: fixed;
-    text-shadow: 2px 2px #000;
+    /* position: fixed; */
+    text-shadow: 2px 2px rgb(0, 0, 0);
     padding-top: 2%;
     padding-bottom: 2%;
-    
 }
 
 header a {
     text-decoration: none;
-    color: #fff;
-
+    color: rgb(255, 255, 255);
 }
 
-.home a {
-    text-decoration: none;
-    color: #fff;
+.enter {
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    background: rgba(48, 54, 186, 0.6);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
 }
 
 .enter a {
@@ -44,30 +51,101 @@ header a {
     align-items: center;
     text-decoration: none;
     font-size: 2.5rem;
-    color: #fff;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px rgb(0, 0, 0);
 }
 
 
 
 img {
     max-width: 414px;
-    border-radius: 1rem;
+    border-radius: 2rem;
+    padding: 4%;
 }
 
 h1 {
     font-size: 1.2rem;
-    text-shadow: 2px 2px #000;
-
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    padding-left: 4%;
+    padding-top: 1%;
 }
 
 p {
     font-size: 0.7rem;
-    text-shadow: 2px 2px #000;
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    padding: 4%;
+    margin-bottom: 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    width: 100%;
+    /* position: fixed; */
 }
 
 .welcomeBox {
+    font-size: 1.3rem;
+    display: flex;
     justify-content: center;
+    padding: 5%;
+    text-shadow: 3px 3px rgb(0, 0, 0);
+    background: rgba(168, 168, 168, 0.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    filter: blur(0px);
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+    width: 250px;
 }
+
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#inputField {
+    vertical-align: middle;
+    font-size: 1.2rem;
+    display: inline-block;
+    background-color: rgb(18, 41, 83);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 3px solid rgb(209, 209, 209);
+    padding: 20px;
+    margin: 30px 10px;
+    width: 250px;
+    height: 50px;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+#inputField:hover {
+    background-color: #000;
+}
+
+#button {
+    display: inline-block;
+    background-color: rgb(18, 41, 83);
+    border-radius: 5px;
+    border: 3px solid rgb(209, 209, 209);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    font-size: 1rem;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+
+/* .content {
+
+} */
 
 footer {
     background-color: rgb(18, 41, 83);
@@ -76,8 +154,7 @@ footer {
     width: 100%;
     position: fixed;
     bottom: 0;
-    text-shadow: 2px 2px #000;
+    text-shadow: 2px 2px rgb(0, 0, 0);
     padding-top: 2%;
     padding-bottom: 2%;
-
 }
