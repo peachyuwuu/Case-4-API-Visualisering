@@ -16,21 +16,36 @@ searchButton.addEventListener("click", function () {
         .then(response => response.json())
         .then((data) => {
 
-            console.log(data.collection.items);
-            const items = data.collection.items;
+            if (!data.collection) {
+                console.log("Array is empty");
 
-            // En for-loop kollar om resultatet är en array och skriver sedan ut resultaten till DOM:en
-            for (let i = 0; i < items.length; i++) {
-                if (Array.isArray(items[i].links)) {
+                document.body.innerHTML = `<p>No results found</p>`;
 
-                    const image = items[i].links[0];
+            } else {
+                // console.log(data.collection);
+                // console.log(data.collection.items);
+                const items = data.collection.items;
 
-                    const info = items[i].data[0];
 
-                    document.body.innerHTML += `<div class="content"><img src="${image.href}"><h1>${info.title}</h1><p>${info.description}</p></div>`
+
+                // En for-loop kollar om resultatet är en array och skriver sedan ut resultaten till DOM:en
+                for (let i = 0; i < items.length; i++) {
+                    if (Array.isArray(items[i].links)) {
+
+                        const image = items[i].links[0];
+
+                        const info = items[i].data[0];
+
+
+                        document.body.innerHTML += `<div class="content"><img src="${image.href}"><h1>${info.title}</h1><p>${info.description}</p></div>`;
+
+
+                    }
 
                 }
+                console.log(items);
             }
+
 
         });
 
