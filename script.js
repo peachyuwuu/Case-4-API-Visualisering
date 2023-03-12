@@ -5,6 +5,11 @@
 // Definierar searchButton och väljer ut den med querySelector
 const searchButton = document.querySelector("button");
 
+// Definierar filterButton och väljer ut den med getElementById
+const filterButton = document.getElementById("filterButton");
+
+
+
 // Lägger till EventListener som kollar när man klickar på knappen och kör funktionen nedan
 searchButton.addEventListener("click", function () {
 
@@ -16,10 +21,24 @@ searchButton.addEventListener("click", function () {
         .then(response => response.json())
         .then((data) => {
 
+            // Om sökningen är tom visas meddelandet "No results found"
             if (!data.collection) {
                 console.log("Array is empty");
 
-                document.body.innerHTML = `<p>No results found</p>`;
+                document.body.innerHTML =
+                    `
+                <header>
+                <div class="header">
+                <a href="landing.html">Home</a>
+                </div>
+                </header>
+                
+                <footer>
+                &copy; Jonatan Saydi
+                </footer>
+                
+                <div class="noResults"><p>No results found</p></div>
+                `;
 
             } else {
                 // console.log(data.collection);
@@ -38,15 +57,22 @@ searchButton.addEventListener("click", function () {
 
 
                         document.body.innerHTML += `<div class="content"><img src="${image.href}"><h1>${info.title}</h1><p>${info.description}</p></div>`;
-
-
                     }
-
                 }
                 console.log(items);
             }
-
-
         });
+});
+
+
+filterButton.addEventListener("click", function filteredImages() {
+
+    console.log("I have been clicked");
+
+    let filteredDates = document.getElementById("filterButton");
+
+    
+
+
 
 });
