@@ -16,13 +16,20 @@ searchButton.addEventListener("click", function () {
     // Definerar sök-variabeln
     let search = document.querySelector("input");
 
+    let media = "";
+    if (document.getElementById("filterCheckbox").checked) {
+
+        media = "&media_type=video";
+    }
+
+
     // Ett anrop görs från API:en med värdet från input field som användaren angett
-    fetch(`https://images-api.nasa.gov/search?q=${search.value}`)
+    fetch(`https://images-api.nasa.gov/search?q=${search.value}${media}`)
         .then(response => response.json())
         .then((data) => {
 
             // Om sökningen är tom visas meddelandet "No results found"
-            if (!data.collection) {
+            if (!search.length) {
                 console.log("Array is empty");
 
                 document.body.innerHTML =
@@ -56,23 +63,10 @@ searchButton.addEventListener("click", function () {
                         const info = items[i].data[0];
 
 
-                        document.body.innerHTML += `<div class="content"><img src="${image.href}"><h1>${info.title}</h1><p>${info.description}</p></div>`;
+                        document.body.innerHTML += `<div class="content"><img src="${image.href}"><h1>${info.title} - ${info.media_type}</h1><p>${info.description}</p></div>`;
                     }
                 }
                 console.log(items);
             }
         });
-});
-
-
-filterButton.addEventListener("click", function filteredImages() {
-
-    console.log("I have been clicked");
-
-    let filteredDates = document.getElementById("filterButton");
-
-    
-
-
-
 });
