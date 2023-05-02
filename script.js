@@ -1,7 +1,3 @@
-// fetch("https://api.nasa.gov/planetary/apod?api_key=GrZaNTnebyHg8Y2vY7CBaAtgYyJviVsdVKMNt5zX&count=10")
-
-
-
 // Definierar searchButton och väljer ut den med querySelector
 const searchButton = document.querySelector("button");
 
@@ -29,8 +25,7 @@ searchButton.addEventListener("click", function () {
         .then((data) => {
 
             // Om sökningen är tom visas meddelandet "No results found"
-            if (!search.length) {
-                console.log("Array is empty");
+            if (!search.value) {
 
                 document.body.innerHTML =
                     `
@@ -48,8 +43,6 @@ searchButton.addEventListener("click", function () {
                 `;
 
             } else {
-                // console.log(data.collection);
-                // console.log(data.collection.items);
                 const items = data.collection.items;
 
 
@@ -66,7 +59,6 @@ searchButton.addEventListener("click", function () {
                         document.body.innerHTML += `<div class="content"><img src="${image.href}"><h1>${info.title} - ${info.media_type}</h1><p>${info.description}</p></div>`;
                     }
                 }
-                console.log(items);
             }
         });
 });
